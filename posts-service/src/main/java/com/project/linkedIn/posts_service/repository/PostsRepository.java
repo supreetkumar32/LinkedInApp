@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface PostsRepository extends JpaRepository<Post, Long> {
 
+
+
 }
 

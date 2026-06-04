@@ -24,3 +24,7 @@ we get the result:
        "id": 1,
        "userId": 1
     }
+
+3. like post api
+   hit the post url http://localhost:9010/likes/1
+   see the data in the database in the post_likes 
