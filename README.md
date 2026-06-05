@@ -28,3 +28,21 @@ we get the result:
 3. like post api
    hit the post url http://localhost:9010/likes/1
    see the data in the database in the post_likes 
+4. get all posts of particular user
+   http://localhost:9010/posts/users/1/allPosts
+   [
+   {
+       "content": "yo bro",
+       "createdAt": "2026-06-04T19:18:53.79461",
+       "id": 1,
+       "userId": 1
+   },
+   {
+       "content": "yo bro supreet",
+       "createdAt": "2026-06-04T19:50:43.839732",
+       "id": 2,
+       "userId": 1
+   }
+   ]
+5. unlike post http://localhost:9010/likes/1
+ it will remove the like from the database
