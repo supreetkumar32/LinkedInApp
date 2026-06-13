@@ -179,3 +179,16 @@ CREATE (a)-[:CONNECTED_TO]->(b);
 For visualising the nodes and relationship query is :
 MATCH (a)-[r]->(b)
 RETURN a, r, b;
+
+After establishing the connection with the neo4J database
+8. GET http://localhost:9030/connections/core/4/first-degree
+    output is as:
+[
+   {
+       "id": 2,
+       "userId": 3,
+       "name": "Ivy"
+   }
+]
+after integrating it with the API gateway,
+GET http://localhost:8080/api/v1/connections/core/4/first-degree
