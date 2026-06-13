@@ -45,4 +45,33 @@ we get the result:
    }
    ]
 5. unlike post http://localhost:9010/likes/1
+
  it will remove the like from the database
+added the dependencies for jwt
+implementing the signup and login
+below dependency for is used to provide the BCrypt password hashing algorithm in Java.
+ <dependency>
+ <groupId>org.mindrot</groupId>
+ <artifactId>jbcrypt</artifactId>
+ <version>0.4</version>
+ </dependency>
+
+6. POST http://localhost:9020/auth/signup
+ {
+   "name":"Supreet",
+   "email":"Supreet@gmail.com",
+   "password":"Supreet@123"
+   }
+got output as:
+   {
+   "id": 1,
+   "name": "Supreet",
+   "email": "Supreet@gmail.com"
+   }
+
+7. POST http://localhost:9020/auth/login
+     {
+      "email":"Supreet@gmail.com",
+      "password":"Supreet@123"
+      }
+will get the token in the output
