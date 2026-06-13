@@ -101,5 +101,7 @@ for making the clients, put the following in the pom
 </dependency>
 
 registered the user service as a client
+registered the post service and api gateway as a client
+we can see user service,post service and api gateway http://localhost:8761/
 
 
