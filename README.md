@@ -75,3 +75,8 @@ got output as:
       "password":"Supreet@123"
       }
 will get the token in the output
+
+configured the discovery server
+Put the @EnableEurekaServer
+hit the localhost:8761
+
