@@ -142,3 +142,40 @@ likePost POST http://localhost:8080/api/v1/posts/likes/2
 unlikePost DELETE http://localhost:8080/api/v1/posts/likes/2
 
 ------EVERYTHING WORKING FINE TILL HERE----------
+in the neo4j database, i have manually created the notes and the relationship in the query section.
+UNWIND [
+{userId: 1, name: 'Henry'},
+{userId: 2, name: 'Grace'},
+{userId: 3, name: 'Ivy'},
+{userId: 4, name: 'Jack'},
+{userId: 5, name: 'Eva'},
+{userId: 6, name: 'Frank'},
+{userId: 7, name: 'Alice'},
+{userId: 8, name: 'David'},
+{userId: 9, name: 'Charlie'},
+{userId: 10, name: 'Bob'}
+] AS person
+CREATE (:Person {userId: person.userId, name: person.name});
+
+for creating the relationships queries are :
+MATCH (a:Person {name: 'Henry'}),   (b:Person {name: 'Grace'})
+CREATE (a)-[:CONNECTED_TO]->(b);
+
+MATCH (a:Person {name: 'Alice'}),   (b:Person {name: 'David'})
+CREATE (a)-[:CONNECTED_TO]->(b);
+
+MATCH (a:Person {name: 'Ivy'}),     (b:Person {name: 'Jack'})
+CREATE (a)-[:CONNECTED_TO]->(b);
+
+MATCH (a:Person {name: 'Charlie'}), (b:Person {name: 'Bob'})
+CREATE (a)-[:CONNECTED_TO]->(b);
+
+MATCH (a:Person {name: 'Eva'}),     (b:Person {name: 'Frank'})
+CREATE (a)-[:CONNECTED_TO]->(b);
+
+MATCH (a:Person {name: 'Grace'}),   (b:Person {name: 'Alice'})
+CREATE (a)-[:CONNECTED_TO]->(b);
+
+For visualising the nodes and relationship query is :
+MATCH (a)-[r]->(b)
+RETURN a, r, b;
