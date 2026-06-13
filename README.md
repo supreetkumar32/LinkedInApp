@@ -104,4 +104,41 @@ registered the user service as a client
 registered the post service and api gateway as a client
 we can see user service,post service and api gateway http://localhost:8761/
 
+Now i have given the configuration as:
+spring:
+cloud:
+gateway:
+routes:
+- id: user-service
+uri: lb://USER-SERVICE
+predicates:
+- Path=/api/v1/users/**
+filters:
+- StripPrefix=2
 
+        - id: posts-service
+        uri: lb://POSTS-SERVICE
+        predicates:
+            - Path=/api/v1/posts/**
+        filters:
+            - StripPrefix=2
+
+        - id: connections-service
+          uri: lb://CONNECTIONS-SERVICE
+          predicates:
+            - Path=/api/v1/connections/**
+          filters:
+            - StripPrefix=2
+
+So the endpoints got changed
+Example:http://localhost:9010/posts/core will become  http://localhost:8080/api/v1/posts/core
+
+all posts like are as follows:
+
+createPost POST http://localhost:8080/api/v1/posts/core
+getPost    GET  http://localhost:8080/api/v1/posts/core/1
+getUserPosts GET http://localhost:8080/api/v1/posts/core/users/1/allPosts
+likePost POST http://localhost:8080/api/v1/posts/likes/2
+unlikePost DELETE http://localhost:8080/api/v1/posts/likes/2
+
+------EVERYTHING WORKING FINE TILL HERE----------
