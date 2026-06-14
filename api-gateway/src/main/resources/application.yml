@@ -22,7 +22,7 @@ spring:
                 - StripPrefix=2
                 - name: AuthenticationFilter
 
-            - id: connections-service
+            - id: connection-service
               uri: lb://CONNECTION-SERVICE
               predicates:
                 - Path=/api/v1/connections/**

@@ -268,5 +268,7 @@ public ResponseEntity<PostDto> getPost(@PathVariable Long postId,HttpServletRequ
 String userId= httpServletRequest.getHeader("X-User-Id")
 i can directly do..Long userId= UserContextHolder.getCurrentUserId()
 
+Implemented the Feign client to get teh firstConnections in postService
+
 
 
