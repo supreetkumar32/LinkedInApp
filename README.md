@@ -292,6 +292,9 @@ Setup producer in post service
 Create request mapping for send,accept and reject the connection request
 Setup producer in Connection service
 
+Create the skeleton for notification service and kafka.Remove the userId from the post creation as we 
+can directly get the userId from the UserContext.
+
 
 
 

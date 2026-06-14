@@ -25,7 +25,8 @@ public class PostsService {
     private final ModelMapper modelMapper;
     private final ConnectionsClient connectionsClient;
 
-    public PostDto createPost(PostCreateRequestDto postDto, Long userId) {
+    public PostDto createPost(PostCreateRequestDto postDto) {
+        Long userId=UserContextHolder.getCurrentUserId();
         Post post = modelMapper.map(postDto, Post.class);
         post.setUserId(userId);
 
