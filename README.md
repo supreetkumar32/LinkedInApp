@@ -283,6 +283,15 @@ now...GET http://localhost:8080/api/v1/connections/core/first-degree is the upda
 Now i can remove userId from   public ResponseEntity<List<Person>> getFirstConnections(@RequestHeader("X-User-id") Long userId) {
 i ahve to add UserContextHolder,UserInterceptor,WebConfig in auth of connection service.
 
+Now, i have to do
+Create notification service
+Setting up kafka message queue
+Setup the consumer inside the notification service
+
+Setup producer in post service
+Create request mapping for send,accept and reject the connection request
+Setup producer in Connection service
+
 
 
 

@@ -12,11 +12,11 @@
         <module name="connection-service" />
         <module name="user-service" />
         <module name="discovery-server" />
+        <module name="notification-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="connections-service" target="21" />
-      <module name="notification-service" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -24,6 +24,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="connection-service" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
       <module name="posts-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
