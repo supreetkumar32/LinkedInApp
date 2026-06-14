@@ -348,6 +348,25 @@ got output as:
 Till now, i have created the producers(post-created-topic and post-liked-topic) and checked via postman and
 kafka console via commands.
 
+Now, i will consume notifications.
+After writing the consumer code,
+do a login , take a token to the createPost
+POST http://localhost:8080/api/v1/posts/core
+{
+"content":"kafka consumer checking"
+}
+
+GOT the output
+{
+    "id": 6,
+    "content": "kafka consumer checking",
+    "userId": 2,
+    "createdAt": "2026-06-14T22:15:15.038262"
+}
+In the terminal of the NotificationService Application,I get
+Sending notifications: handlePostCreated: PostCreatedEvent(creatorId=2, content=kafka consumer checking, postId=6)
+also in the terminal of ConnectionServiceApplication, it is showing
+Getting first degree connection of userId : 2
 
 
 
