@@ -368,6 +368,10 @@ Sending notifications: handlePostCreated: PostCreatedEvent(creatorId=2, content=
 also in the terminal of ConnectionServiceApplication, it is showing
 Getting first degree connection of userId : 2
 
+Now i will create request mapping for send,accept and reject the connection request.
+
+
+
 
 
 

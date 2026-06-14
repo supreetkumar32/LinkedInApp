@@ -23,4 +23,54 @@ public class ConnectionsService {
         return personRepository.getFirstDegreeConnections(userId);
     }
 
+    public Boolean sendConnectionRequest(Long receiverId) {
+        Long senderId = UserContextHolder.getCurrentUserId();
+        log.info("Trying to send connection request, sender: {}, reciever: {}", senderId, receiverId);
+
+        if(senderId.equals(receiverId)) {
+            throw new RuntimeException("Both sender and receiver are the same");
+        }
+
+        boolean alreadySentRequest = personRepository.connectionRequestExists(senderId, receiverId);
+        if (alreadySentRequest) {
+            throw new RuntimeException("Connection request already exists, cannot send again");
+        }
+
+        boolean alreadyConnected = personRepository.alreadyConnected(senderId, receiverId);
+        if(alreadyConnected) {
+            throw new RuntimeException("Already connected users, cannot add connection request");
+        }
+
+        log.info("Successfully sent the connection request");
+        personRepository.addConnectionRequest(senderId, receiverId);
+
+        return true;
+    }
+
+    public Boolean acceptConnectionRequest(Long senderId) {
+        Long receiverId = UserContextHolder.getCurrentUserId();
+
+        boolean connectionRequestExists = personRepository.connectionRequestExists(senderId, receiverId);
+        if (!connectionRequestExists) {
+            throw new RuntimeException("No connection request exists to accept");
+        }
+
+        personRepository.acceptConnectionRequest(senderId, receiverId);
+        log.info("Successfully accepted the connection request, sender: {}, receiver: {}", senderId, receiverId);
+
+        return true;
+    }
+
+    public Boolean rejectConnectionRequest(Long senderId) {
+        Long receiverId = UserContextHolder.getCurrentUserId();
+
+        boolean connectionRequestExists = personRepository.connectionRequestExists(senderId, receiverId);
+        if (!connectionRequestExists) {
+            throw new RuntimeException("No connection request exists, cannot delete");
+        }
+
+        personRepository.rejectConnectionRequest(senderId, receiverId);
+        return true;
+    }
+
 }
