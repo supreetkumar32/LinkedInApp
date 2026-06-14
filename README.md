@@ -295,6 +295,61 @@ Setup producer in Connection service
 Create the skeleton for notification service and kafka.Remove the userId from the post creation as we 
 can directly get the userId from the UserContext.
 
+In this commit , i have created the code for creating the two topics (post-created-topic and post-liked-topic).
+Also, did some hardcoded userId removal.
+After writing the code , run the microservices in the below order:
+DiscoveryServer -> Use -> Post -> Apigateway
+
+After running it, go to the postman 
+and log in..take the generated token
+POST http://localhost:8080/api/v1/posts/core (having the generated token in authentication)
+{
+"content":"kafka event creation"
+}
+
+then we got the output as:
+{
+"id": 5,
+"content": "kafka event creation",
+"userId": 2,
+"createdAt": "2026-06-14T18:24:47.124308"
+}
+
+now, checking in the terminal
+C:\kafka\bin\windows>kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+we get the output as:
+__consumer_offsets
+post-created-topic
+post-liked-topic
+test
+
+want to check what is inside the post-created-topic:
+C:\kafka\bin\windows>kafka-console-consumer.bat ^
+More?   --bootstrap-server localhost:9092 ^
+More?   --topic post-created-topic ^
+More?   --from-beginning
+
+i get:(what i have put in the POST above)
+{"creatorId":2,"content":"kafka event creation","postId":5}
+
+now, checking for the like controller
+in postman
+POST http://localhost:8080/api/v1/posts/likes/2 (given the authentication token)
+
+C:\kafka\bin\windows>kafka-console-consumer.bat ^
+More?   --bootstrap-server localhost:9092 ^
+More?   --topic post-liked-topic ^
+More?   --from-beginning
+
+got output as:
+{"postId":2,"creatorId":1,"likedByUserId":2}
+
+Till now, i have created the producers(post-created-topic and post-liked-topic) and checked via postman and
+kafka console via commands.
+
+
+
 
 
 
