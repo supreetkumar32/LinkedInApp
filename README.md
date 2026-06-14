@@ -246,3 +246,12 @@ public Post createPost(
 }
 
 Till now i have created the AuthenticationFilter.
+
+POST http://localhost:9020/users/auth/signup becomes http://localhost:8080/api/v1/users/auth/signup
+POST http://localhost:9020/users/auth/login becomes http://localhost:8080/api/v1/users/auth/login
+
+i have checked the functionality whether the userId passes from API gateway to post service by putting the below line in post controller
+and running in the debug mode
+String userId= httpServletRequest.getHeader("X-User-Id");
+i logged in and got the token.Put that token in the getPost api authentication in postman and ran it.
+Till now added the authenticationFilter in posts and connection service and in post service whether the userId is passed in the post service.
