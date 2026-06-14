@@ -192,3 +192,57 @@ After establishing the connection with the neo4J database
 ]
 after integrating it with the API gateway,
 GET http://localhost:8080/api/v1/connections/core/4/first-degree
+
+Agenda:
+Setup teh gateway to handle JWT
+Pass on JWT to downstream services
+Setup custom UserContextHolder
+Pass data to UserContextHolder fromm Request Interceptor
+Register the RequestInterceptor with webMVC
+Setup OpenFeignInterceptor to pass on user data
+
+All the requests which are coming to API Gateway are intercepted by our own custom filters that would be a gateway filter. Then we 
+pass on those filters to different routes. In that particular filter, I will check that the request header contains userId  and token 
+or not.
+In the AuthenticationFilter (GatewayFilter function), i have extracted the token and then passes to other services.i can pass the token 
+by passing the token inside header.
+.request(r -> r.header("X-User-Id", userId))//adding the userId to header
+
+Before Gateway
+
+Client sends:
+POST /api/v1/posts/create
+Authorization: Bearer abc.xyz.123
+
+After Gateway
+
+Posts service receives:
+POST /posts/create
+Authorization: Bearer abc.xyz.123
+X-User-Id: 5
+
+Why add X-User-Id?
+
+Without it, every microservice would have to:
+Read JWT
+Verify signature
+Extract claims
+
+With this approach:
+
+Gateway validates once
+Services trust the gateway
+Services simply read:
+@RequestHeader("X-User-Id")
+String userId;
+
+Example in Posts Service:
+
+@PostMapping("/create")
+public Post createPost(
+@RequestHeader("X-User-Id") String userId) {
+
+    System.out.println("Creating post for user: " + userId);
+}
+
+Till now i have created the AuthenticationFilter.
