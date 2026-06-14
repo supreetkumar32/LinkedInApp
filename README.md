@@ -270,5 +270,16 @@ i can directly do..Long userId= UserContextHolder.getCurrentUserId()
 
 Implemented the Feign client to get teh firstConnections in postService
 
+one observation: a person should not be allowed to see the first degree connection of everyone.
+So removing the userId from @GetMapping("/{userId}/first-degree")
+FeinClientInterceptor is made for this purpose.
+In this(FeinClientInterceptor) we have changed the header
+if(userId != null) {
+requestTemplate.header("X-User-Id", userId.toString());
+}
+
+now...GET http://localhost:8080/api/v1/connections/core/first-degree is the updated Url
+
+
 
 

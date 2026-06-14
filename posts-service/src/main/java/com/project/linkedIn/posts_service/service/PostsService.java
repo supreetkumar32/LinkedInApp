@@ -38,7 +38,7 @@ public class PostsService {
 
         Long userId= UserContextHolder.getCurrentUserId();
         //using the feign client
-        List<PersonDto> firstConnections = connectionsClient.getFirstConnections(userId);
+        List<PersonDto> firstConnections = connectionsClient.getFirstConnections();
 
 
         Post post = postsRepository.findById(postId).orElseThrow(() ->
