@@ -255,3 +255,18 @@ and running in the debug mode
 String userId= httpServletRequest.getHeader("X-User-Id");
 i logged in and got the token.Put that token in the getPost api authentication in postman and ran it.
 Till now added the authenticationFilter in posts and connection service and in post service whether the userId is passed in the post service.
+
+Creating the UserContextHolder.
+From UserContextHolder,i can hold of the userId from any layer inside the code.
+UserInterceptor is used to intercept all the incoming request and from those request will get the header and from that i get
+X-User-Id header and then i will initiate userContextHolder.
+In WebConfig, I am allowing the interceptor to intercept the request.
+
+Now, by creating the UserInterceptor I can directly get the userId.
+i dont need to do   
+public ResponseEntity<PostDto> getPost(@PathVariable Long postId,HttpServletRequest httpServletRequest) {
+String userId= httpServletRequest.getHeader("X-User-Id")
+i can directly do..Long userId= UserContextHolder.getCurrentUserId()
+
+
+
