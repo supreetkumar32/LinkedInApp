@@ -278,7 +278,10 @@ if(userId != null) {
 requestTemplate.header("X-User-Id", userId.toString());
 }
 
-now...GET http://localhost:8080/api/v1/connections/core/first-degree is the updated Url
+now...GET http://localhost:8080/api/v1/connections/core/first-degree is the updated Url.
+
+Now i can remove userId from   public ResponseEntity<List<Person>> getFirstConnections(@RequestHeader("X-User-id") Long userId) {
+i ahve to add UserContextHolder,UserInterceptor,WebConfig in auth of connection service.
 
 
 
