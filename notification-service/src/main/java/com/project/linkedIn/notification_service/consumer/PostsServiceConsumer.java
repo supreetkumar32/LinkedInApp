@@ -2,8 +2,7 @@ package com.project.linkedIn.notification_service.consumer;
 
 import com.project.linkedIn.notification_service.clients.ConnectionsClient;
 import com.project.linkedIn.notification_service.dto.PersonDto;
-import com.project.linkedIn.notification_service.entity.Notification;
-import com.project.linkedIn.notification_service.repository.NotificationRepository;
+import com.project.linkedIn.notification_service.service.SendNotification;
 import com.project.linkedIn.posts_service.event.PostCreatedEvent;
 import com.project.linkedIn.posts_service.event.PostLikedEvent;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +18,7 @@ import java.util.List;
 public class PostsServiceConsumer {
 
     private final ConnectionsClient connectionsClient;
-    private final NotificationRepository notificationRepoditory;
+    private final SendNotification sendNotification;
 
     @KafkaListener(topics = "post-created-topic")
     public void handlePostCreated(PostCreatedEvent postCreatedEvent) {
@@ -27,7 +26,7 @@ public class PostsServiceConsumer {
         List<PersonDto> connections = connectionsClient.getFirstConnections(postCreatedEvent.getCreatorId());
 
         for(PersonDto connection: connections) {
-            sendNotification(connection.getUserId(), "Your connection "+postCreatedEvent.getCreatorId()+" has created" +
+            sendNotification.send(connection.getUserId(), "Your connection "+postCreatedEvent.getCreatorId()+" has created" +
                     " a post, Check it out");
         }
     }
@@ -38,15 +37,8 @@ public class PostsServiceConsumer {
         String message = String.format("Your post, %d has been liked by %d", postLikedEvent.getPostId(),
                 postLikedEvent.getLikedByUserId());
 
-        sendNotification(postLikedEvent.getCreatorId(), message);
+        sendNotification.send(postLikedEvent.getCreatorId(), message);
     }
 
-    public void sendNotification(Long userId,String message){
-        Notification notification=new Notification();
-        notification.setMessage(message);
-        notification.setUserId(userId);
-        notificationRepoditory.save(notification);
-
-    }
 
 }

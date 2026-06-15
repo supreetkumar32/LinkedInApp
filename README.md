@@ -374,6 +374,19 @@ Now I will setup the producer in the connection service.
 AcceptConnectionRequestEvent 
 SendConnectionRequestEvent
 
+Now i will create the consumer (ConnectionsServiceConsumer)
+@KafkaListener(topics = "send-connection-request-topic")
+@KafkaListener(topics = "accept-connection-request-topic")
+
+Now 
+POST http://localhost:8080/api/v1/connections/core/request/3 with bearer token
+it will show 200 OK
+it will show REQUESTED_TO to userId 3 in the neo4j database from the userId whose token i have given
+And in the terminal of the NotificationServiceApplication it will show the following which shows that the notification service is also working:
+c.p.l.n.c.ConnectionsServiceConsumer     : handle connections: handleSendConnectionRequest: SendConnectionRequestEvent(senderId=2, receiverId=3)
+2026-06-15T22:25:10.021+05:30  INFO 26092 --- [notification-service] [ntainer#1-0-C-1] c.p.l.n.service.SendNotification         : Notification saved for user: 3
+
+
 
 
 
