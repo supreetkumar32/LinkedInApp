@@ -516,6 +516,39 @@ create the logback-spring.xml in the resorces folder and put the following code 
 
 after the running the microservices , we can see the logs folder got created
 
+now setting the logstash
+create the file logstash.conf and put the below contents in it and put it in the logstash folder which we have downloaded and extracted
+input {
+file {
+type => "log"
+path => "/Users/supre/Desktop/LinkedInApp/logs/*/application-*.log"
+start_position => "beginning"
+}
+}
+
+output {
+stdout{
+codec => rubydebug
+}
+
+elasticsearch {
+hosts => ["https://localhost:9200"]
+
+    index => "spring-boot-logs-%{+YYYY.MM.dd}"
+
+    ssl_certificate_verification => flase
+
+    user => "elastic"
+
+    password => "8oOsZwZxMk6puX0L0gsV"
+}
+}
+
+run the following in the cmd:
+C:\logstash-9.4.2>bin\logstash.bat -f C:\logstash-9.4.2\logstash.conf
+after running this in the terminal we can see in the url http://localhost:5601/?code=738000 (kibana dashboard)
+Now we can create the data view inside the kibana
+and see the data
 
 
 
