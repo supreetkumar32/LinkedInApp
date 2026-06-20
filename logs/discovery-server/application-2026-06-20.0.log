@@ -1,0 +1,185 @@
+20-06-2026 18:02:46.399 [main] [-] INFO  discovery-server-c.p.l.d.DiscoveryServerApplication.logStarting - Starting DiscoveryServerApplication using Java 25 with PID 6796 (C:\Users\supre\Desktop\LinkedInApp\discovery-server\target\classes started by supre in C:\Users\supre\Desktop\LinkedInApp)
+20-06-2026 18:02:46.405 [main] [-] INFO  discovery-server-c.p.l.d.DiscoveryServerApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+20-06-2026 18:02:53.877 [main] [-] INFO  discovery-server-o.s.cloud.context.scope.GenericScope.setSerializationId - BeanFactory id=636440f6-4daa-3ac2-9edf-bc0d930310dc
+20-06-2026 18:02:54.843 [main] [-] INFO  discovery-server-o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8761 (http)
+20-06-2026 18:02:54.887 [main] [-] INFO  discovery-server-o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8761"]
+20-06-2026 18:02:54.894 [main] [-] INFO  discovery-server-o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+20-06-2026 18:02:54.894 [main] [-] INFO  discovery-server-o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.42]
+20-06-2026 18:02:55.195 [main] [-] INFO  discovery-server-o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+20-06-2026 18:02:55.196 [main] [-] INFO  discovery-server-o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 8394 ms
+20-06-2026 18:02:58.152 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON encoding codec LegacyJacksonJson
+20-06-2026 18:02:58.158 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON decoding codec LegacyJacksonJson
+20-06-2026 18:02:59.019 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML encoding codec XStreamXml
+20-06-2026 18:02:59.020 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML decoding codec XStreamXml
+20-06-2026 18:02:59.372 [main] [-] INFO  discovery-server-o.s.v.b.OptionalValidatorFactoryBean.afterPropertiesSet - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+20-06-2026 18:03:02.583 [main] [-] WARN  discovery-server-o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+20-06-2026 18:03:02.634 [main] [-] INFO  discovery-server-o.s.c.n.eureka.InstanceInfoFactory.create - Setting initial instance status as: STARTING
+20-06-2026 18:03:02.687 [main] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.<init> - Initializing Eureka in region us-east-1
+20-06-2026 18:03:02.729 [main] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.<init> - Client configured to neither register nor query for data.
+20-06-2026 18:03:02.738 [main] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.<init> - Discovery Client initialized at timestamp 1781958782732 with initial instances count: 0
+20-06-2026 18:03:02.883 [main] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.initialize - Initializing ...
+20-06-2026 18:03:02.886 [main] [-] INFO  discovery-server-c.n.eureka.cluster.PeerEurekaNodes.updatePeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+20-06-2026 18:03:03.002 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON encoding codec LegacyJacksonJson
+20-06-2026 18:03:03.004 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON decoding codec LegacyJacksonJson
+20-06-2026 18:03:03.005 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML encoding codec XStreamXml
+20-06-2026 18:03:03.005 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML decoding codec XStreamXml
+20-06-2026 18:03:03.086 [main] [-] INFO  discovery-server-c.n.eureka.cluster.PeerEurekaNodes.start - Replica node URL:  http://localhost:8761/eureka/
+20-06-2026 18:03:03.111 [main] [-] INFO  discovery-server-c.n.e.r.AbstractInstanceRegistry.initRemoteRegionRegistry - Finished initializing remote region registries. All known remote regions: []
+20-06-2026 18:03:03.112 [main] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.initialize - Initialized
+20-06-2026 18:03:03.179 [main] [-] INFO  discovery-server-o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 16 endpoints beneath base path '/actuator'
+20-06-2026 18:03:03.421 [main] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServiceRegistry.register - Registering application DISCOVERY-SERVER with eureka with status UP
+20-06-2026 18:03:03.428 [main] [-] INFO  discovery-server-o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8761"]
+20-06-2026 18:03:03.460 [main] [-] INFO  discovery-server-o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8761 (http) with context path '/'
+20-06-2026 18:03:03.473 [main] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent - Updating port to 8761
+20-06-2026 18:03:03.491 [Thread-9] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerBootstrap.isAws - isAws returned false
+20-06-2026 18:03:03.493 [Thread-9] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerBootstrap.initEurekaServerContext - Initialized server context
+20-06-2026 18:03:03.493 [Thread-9] [-] INFO  discovery-server-c.n.e.r.PeerAwareInstanceRegistryImpl.openForTraffic - Got 1 instances from neighboring DS node
+20-06-2026 18:03:03.494 [Thread-9] [-] INFO  discovery-server-c.n.e.r.PeerAwareInstanceRegistryImpl.openForTraffic - Renew threshold is: 1
+20-06-2026 18:03:03.494 [Thread-9] [-] INFO  discovery-server-c.n.e.r.PeerAwareInstanceRegistryImpl.openForTraffic - Changing status to UP
+20-06-2026 18:03:03.496 [Thread-9] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerInitializerConfiguration.lambda$start$0 - Started Eureka Server
+20-06-2026 18:03:03.589 [main] [-] INFO  discovery-server-c.p.l.d.DiscoveryServerApplication.logStarted - Started DiscoveryServerApplication in 20.104 seconds (process running for 27.252)
+20-06-2026 18:04:03.578 [Eureka-EvictionTimer] [-] INFO  discovery-server-c.n.e.r.AbstractInstanceRegistry.run - Running the evict task with compensationTime 0ms
+20-06-2026 18:04:18.397 [http-nio-8761-exec-1] [-] INFO  discovery-server-o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+20-06-2026 18:04:18.407 [http-nio-8761-exec-1] [-] INFO  discovery-server-o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+20-06-2026 18:04:19.408 [http-nio-8761-exec-1] [-] INFO  discovery-server-o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 884 ms
+20-06-2026 18:04:23.430 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [-] WARN  discovery-server-z.r.i.AsyncReporter$BoundedAsyncReporter.flush - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+20-06-2026 18:04:23.433 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [-] WARN  discovery-server-z.r.i.AsyncReporter$BoundedAsyncReporter.flush - Dropped 1 spans due to ConnectException()
+java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:923)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:60)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41)
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123)
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266)
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1070)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:223)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:277)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:235)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:955)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:932)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:531)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1794)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	... 1 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:942)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:211)
+	... 9 common frames omitted
+20-06-2026 18:04:24.198 [http-nio-8761-exec-2] [6a3688ce32cf14d130ad339abc586c78-a21790ecd30f8c21] INFO  discovery-server-c.n.e.r.AbstractInstanceRegistry.register - Registered instance USER-SERVICE/LAPTOP-TKMIJ97I:user-service:9020 with status UP (replication=false)
+20-06-2026 18:04:26.599 [http-nio-8761-exec-3] [6a3688d295f864f1124fe34b3637fa1f-124fe34b3637fa1f] INFO  discovery-server-c.n.e.r.AbstractInstanceRegistry.register - Registered instance USER-SERVICE/LAPTOP-TKMIJ97I:user-service:9020 with status UP (replication=true)
+20-06-2026 18:05:03.167 [TaskBatchingWorker-target_localhost-3] [-] ERROR discovery-server-c.n.e.c.ReplicationTaskProcessor.process - It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534)
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674)
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709)
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391)
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703)
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439)
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345)
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116)
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80)
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:178)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:277)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:302)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:354)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:798)
+	at java.base/java.net.Socket$SocketInputStream.implRead(Socket.java:974)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:964)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486)
+	... 16 common frames omitted
+20-06-2026 18:05:03.566 [Eureka-EvictionTimer] [-] INFO  discovery-server-c.n.e.r.AbstractInstanceRegistry.run - Running the evict task with compensationTime 21ms
+20-06-2026 18:05:08.009 [SpringApplicationShutdownHook] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServiceRegistry.deregister - Unregistering application DISCOVERY-SERVER with eureka with status DOWN
+20-06-2026 18:05:20.244 [SpringApplicationShutdownHook] [-] INFO  discovery-server-o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+20-06-2026 18:05:24.236 [tomcat-shutdown] [-] INFO  discovery-server-o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete
+20-06-2026 18:05:24.285 [SpringApplicationShutdownHook] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerBootstrap.contextDestroyed - Shutting down Eureka Server..
+20-06-2026 18:05:24.286 [SpringApplicationShutdownHook] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.shutdown - Shutting down ...
+20-06-2026 18:05:24.297 [Eureka-Jersey3Client-Conn-Cleaner2] [-] ERROR discovery-server-c.n.d.s.t.j.EurekaJersey3ClientImpl.run - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169)
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54)
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+20-06-2026 18:05:24.405 [SpringApplicationShutdownHook] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.shutdown - Shut down
+20-06-2026 18:05:24.409 [SpringApplicationShutdownHook] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerBootstrap.contextDestroyed - Eureka Service is now shutdown...
+20-06-2026 18:05:24.436 [SpringApplicationShutdownHook] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.shutdown - Shutting down ...
+20-06-2026 18:05:24.440 [SpringApplicationShutdownHook] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.shutdown - Shut down
+20-06-2026 18:05:26.189 [SpringApplicationShutdownHook] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.shutdown - Shutting down DiscoveryClient ...
+20-06-2026 18:05:26.207 [SpringApplicationShutdownHook] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.shutdown - Completed shut down of DiscoveryClient
+20-06-2026 18:05:44.992 [main] [-] INFO  discovery-server-c.p.l.d.DiscoveryServerApplication.logStarting - Starting DiscoveryServerApplication using Java 25 with PID 5844 (C:\Users\supre\Desktop\LinkedInApp\discovery-server\target\classes started by supre in C:\Users\supre\Desktop\LinkedInApp)
+20-06-2026 18:05:44.999 [main] [-] INFO  discovery-server-c.p.l.d.DiscoveryServerApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+20-06-2026 18:05:48.384 [main] [-] INFO  discovery-server-o.s.cloud.context.scope.GenericScope.setSerializationId - BeanFactory id=636440f6-4daa-3ac2-9edf-bc0d930310dc
+20-06-2026 18:05:49.338 [main] [-] INFO  discovery-server-o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8761 (http)
+20-06-2026 18:05:49.364 [main] [-] INFO  discovery-server-o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8761"]
+20-06-2026 18:05:49.369 [main] [-] INFO  discovery-server-o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+20-06-2026 18:05:49.370 [main] [-] INFO  discovery-server-o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.42]
+20-06-2026 18:05:49.511 [main] [-] INFO  discovery-server-o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+20-06-2026 18:05:49.512 [main] [-] INFO  discovery-server-o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 4399 ms
+20-06-2026 18:05:52.089 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON encoding codec LegacyJacksonJson
+20-06-2026 18:05:52.091 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON decoding codec LegacyJacksonJson
+20-06-2026 18:05:52.612 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML encoding codec XStreamXml
+20-06-2026 18:05:52.613 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML decoding codec XStreamXml
+20-06-2026 18:05:53.294 [main] [-] INFO  discovery-server-o.s.v.b.OptionalValidatorFactoryBean.afterPropertiesSet - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+20-06-2026 18:05:56.674 [main] [-] WARN  discovery-server-o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+20-06-2026 18:05:56.766 [main] [-] INFO  discovery-server-o.s.c.n.eureka.InstanceInfoFactory.create - Setting initial instance status as: STARTING
+20-06-2026 18:05:56.832 [main] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.<init> - Initializing Eureka in region us-east-1
+20-06-2026 18:05:56.834 [main] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.<init> - Client configured to neither register nor query for data.
+20-06-2026 18:05:56.879 [main] [-] INFO  discovery-server-c.netflix.discovery.DiscoveryClient.<init> - Discovery Client initialized at timestamp 1781958956839 with initial instances count: 0
+20-06-2026 18:05:57.061 [main] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.initialize - Initializing ...
+20-06-2026 18:05:57.066 [main] [-] INFO  discovery-server-c.n.eureka.cluster.PeerEurekaNodes.updatePeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+20-06-2026 18:05:57.214 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON encoding codec LegacyJacksonJson
+20-06-2026 18:05:57.214 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using JSON decoding codec LegacyJacksonJson
+20-06-2026 18:05:57.214 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML encoding codec XStreamXml
+20-06-2026 18:05:57.215 [main] [-] INFO  discovery-server-c.n.d.p.DiscoveryJerseyProvider.<init> - Using XML decoding codec XStreamXml
+20-06-2026 18:05:57.361 [main] [-] INFO  discovery-server-c.n.eureka.cluster.PeerEurekaNodes.start - Replica node URL:  http://localhost:8761/eureka/
+20-06-2026 18:05:57.391 [main] [-] INFO  discovery-server-c.n.e.r.AbstractInstanceRegistry.initRemoteRegionRegistry - Finished initializing remote region registries. All known remote regions: []
+20-06-2026 18:05:57.392 [main] [-] INFO  discovery-server-c.n.e.DefaultEurekaServerContext.initialize - Initialized
+20-06-2026 18:05:57.447 [main] [-] INFO  discovery-server-o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 16 endpoints beneath base path '/actuator'
+20-06-2026 18:05:57.852 [main] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServiceRegistry.register - Registering application DISCOVERY-SERVER with eureka with status UP
+20-06-2026 18:05:57.873 [main] [-] INFO  discovery-server-o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8761"]
+20-06-2026 18:05:57.961 [Thread-9] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerBootstrap.isAws - isAws returned false
+20-06-2026 18:05:57.963 [Thread-9] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerBootstrap.initEurekaServerContext - Initialized server context
+20-06-2026 18:05:57.965 [Thread-9] [-] INFO  discovery-server-c.n.e.r.PeerAwareInstanceRegistryImpl.openForTraffic - Got 1 instances from neighboring DS node
+20-06-2026 18:05:57.973 [Thread-9] [-] INFO  discovery-server-c.n.e.r.PeerAwareInstanceRegistryImpl.openForTraffic - Renew threshold is: 1
+20-06-2026 18:05:57.974 [Thread-9] [-] INFO  discovery-server-c.n.e.r.PeerAwareInstanceRegistryImpl.openForTraffic - Changing status to UP
+20-06-2026 18:05:57.981 [Thread-9] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaServerInitializerConfiguration.lambda$start$0 - Started Eureka Server
+20-06-2026 18:05:58.040 [main] [-] INFO  discovery-server-o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8761 (http) with context path '/'
+20-06-2026 18:05:58.048 [main] [-] INFO  discovery-server-o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent - Updating port to 8761
+20-06-2026 18:05:58.329 [main] [-] INFO  discovery-server-c.p.l.d.DiscoveryServerApplication.logStarted - Started DiscoveryServerApplication in 14.834 seconds (process running for 16.348)
+20-06-2026 18:06:57.993 [Eureka-EvictionTimer] [-] INFO  discovery-server-c.n.e.r.AbstractInstanceRegistry.run - Running the evict task with compensationTime 0ms
