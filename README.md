@@ -439,6 +439,54 @@ now run all the microservices,neo4j,kafka,zipkin,postman,postgresql and after hi
 hit the endpoint http://localhost:9411/zipkin/ to see the logs
 Till now zipkin is running well.
 
+Now i will do the centralised login using the ELK Stack
+ELK is a collection of three open-source applications
+- Elasticsearch, Logstash, and Kibana from Elastic that accepts data from any source or format, on which you can then perform search, analysis, and visualize
+  that data.
+
+download the elk from
+ElasticSearch: https://www.elastic.co/downloads/elasticsearch
+Logstash: https://www.elastic.co/downloads/logstash
+Kibana: https://www.elastic.co/downloads/kibana
+
+put it in c drive and extracted it there
+
+run the elastic search as follows:
+C:\elasticsearch-9.4.2\elasticsearch-9.4.2\bin>elasticsearch.bat
+
+Γä╣∩╕Å  Password for the elastic user (reset with `bin/elasticsearch-reset-password -u elastic`):
+8oOsZwZxMk6puX0L0gsV
+
+Γä╣∩╕Å  HTTP CA certificate SHA-256 fingerprint:
+33803f43b1313f5192d04911dca3291055457b454e5ccbbce1f16e0ed1a61306
+
+Γä╣∩╕Å  Configure Kibana to use this cluster:
+ΓÇó Run Kibana and click the configuration link in the terminal when Kibana starts.
+ΓÇó Copy the following enrollment token and paste it into Kibana in your browser (valid for the next 30 minutes):
+eyJ2ZXIiOiI4LjE0LjAiLCJhZHIiOlsiMTkyLjE2OC4xLjE2OjkyMDAiXSwiZmdyIjoiMzM4MDNmNDNiMTMxM2Y1MTkyZDA0OTExZGNhMzI5MTA1NTQ1N2I0NTRlNWNjYmJjZTFmMTZlMGVkMWE2MTMwNiIsImtleSI6Im1IN2Q1SjRCdDFvdHM2M2UzX05OOjFMUFZ3SEFkMEQ3X0FmSndyVksxVUEifQ==
+
+hit the url https://localhost:9200/
+
+go to advanced
+username: elastic
+password:8oOsZwZxMk6puX0L0gsV
+
+then run kibana
+C:\kibana-9.4.2\bin>kibana.bat
+
+after running, i got Go to http://localhost:5601/?code=738000 to get started in the last of cmd
+I hit the url http://localhost:5601/?code=738000
+copy the enrollment token (eyJ2ZXIiOiI4LjE0LjAiLCJhZHIiOlsiMTkyLjE2OC4xLjE2OjkyMDAiXSwiZmdyIjoiMzM4MDNmNDNiMTMxM2Y1MTkyZDA0OTExZGNhMzI5MTA1NTQ1N2I0NTRlNWNjYmJjZTFmMTZlMGVkMWE2MTMwNiIsImtleSI6Im1IN2Q1SjRCdDFvdHM2M2UzX05OOjFMUFZ3SEFkMEQ3X0FmSndyVksxVUEifQ==) and paste it in the UI i got after hitting teh url
+after setting up the configuration, it will ask for username and password
+username: elastic
+password:8oOsZwZxMk6puX0L0gsV
+
+now for logstash
+
+
+
+
+
 
 
 
