@@ -386,6 +386,54 @@ And in the terminal of the NotificationServiceApplication it will show the follo
 c.p.l.n.c.ConnectionsServiceConsumer     : handle connections: handleSendConnectionRequest: SendConnectionRequestEvent(senderId=2, receiverId=3)
 2026-06-15T22:25:10.021+05:30  INFO 26092 --- [notification-service] [ntainer#1-0-C-1] c.p.l.n.service.SendNotification         : Notification saved for user: 3
 
+Now i am using the Zepkin for distributed tracing
+I have Downloaded zipkin server from https://repo1.maven.org/maven2/io/zipkin/zipkin-server/3.6.1/zipkin-server-3.6.1-exec.jar
+In teh springboot terminal, i have opened
+PS C:\Users\supre\Downloads> java -jar zipkin-server-3.6.1-exec.jar
+hit the url http://localhost:9411/zipkin/
+
+Adding the below dependencies to pom.xml to every microservice
+<dependencies>
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+		<!--Zipkin and micrometer dependency-->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-observation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-tracing-bridge-brave</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.reporter2</groupId>
+			<artifactId>zipkin-reporter-brave</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-micrometer</artifactId>
+		</dependency>
+
+Add the below to application.yml or application.properties
+
+management.endpoints.web.exposure.include=*
+management.tracing.sampling.probability=1.0
+management.zipkin.tracing.endpoint: http://localhost:9411/api/v2/spans
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    tracing:
+        sampling:
+            probability: 1.0
+    zipkin:
+        tracing:
+            endpoint: http://localhost:9411/api/v2/spans
 
 
 
