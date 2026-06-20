@@ -386,7 +386,7 @@ And in the terminal of the NotificationServiceApplication it will show the follo
 c.p.l.n.c.ConnectionsServiceConsumer     : handle connections: handleSendConnectionRequest: SendConnectionRequestEvent(senderId=2, receiverId=3)
 2026-06-15T22:25:10.021+05:30  INFO 26092 --- [notification-service] [ntainer#1-0-C-1] c.p.l.n.service.SendNotification         : Notification saved for user: 3
 
-Now i am using the Zepkin for distributed tracing
+Now i am using the Zipkin and micrometer for distributed tracing
 I have Downloaded zipkin server from https://repo1.maven.org/maven2/io/zipkin/zipkin-server/3.6.1/zipkin-server-3.6.1-exec.jar
 In teh springboot terminal, i have opened
 PS C:\Users\supre\Downloads> java -jar zipkin-server-3.6.1-exec.jar
@@ -434,6 +434,10 @@ management:
     zipkin:
         tracing:
             endpoint: http://localhost:9411/api/v2/spans
+
+now run all the microservices,neo4j,kafka,zipkin,postman,postgresql and after hitting any restendpoint via postman
+hit the endpoint http://localhost:9411/zipkin/ to see the logs
+Till now zipkin is running well.
 
 
 
