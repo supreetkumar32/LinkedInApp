@@ -553,6 +553,14 @@ and see the data
 
 
 
+after shutdown, order in which elk stack will be run
+C:\elasticsearch-9.4.2\elasticsearch-9.4.2\bin>elasticsearch.bat (elastic)
+C:\kibana-9.4.2\bin>kibana.bat (kibana)
+C:\logstash-9.4.2>bin\logstash.bat -f C:\logstash-9.4.2\logstash.conf (logstash)
+
+
+
+
 
 
 
