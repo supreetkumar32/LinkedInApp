@@ -24,20 +24,69 @@ A backend application inspired by LinkedIn, built using a **microservices archit
 
 The application is split into 5 independently deployable Spring Boot microservices. All external traffic enters through the **API Gateway**, which handles JWT validation before routing requests. Services register themselves with **Eureka Discovery Server** so the gateway and inter-service clients can resolve them by name rather than hardcoded URLs.
 
-```
-Client
-  │
-  ▼
-API Gateway (port 8080)          ← JWT validation, routing
-  │
-  ├──▶ User Service (port 9020)       ← PostgreSQL
-  ├──▶ Posts Service (port 9010)      ← PostgreSQL + Kafka Producer
-  ├──▶ Connection Service (port 9030) ← Neo4j + Kafka Producer
-  └──▶ Notification Service (port 9040) ← PostgreSQL + Kafka Consumer
+```mermaid
+flowchart TD
+    Client(["Client"])
 
-Discovery Server (port 8761)     ← Eureka
-Zipkin (port 9411)               ← Distributed Tracing
-Kafka (port 9092)                ← Event Broker
+    subgraph GW_BOX["API Gateway  ·  port 8080"]
+        GW["Spring Cloud Gateway\nJWT AuthenticationFilter"]
+    end
+
+    subgraph EUR_BOX["Service Registry  ·  port 8761"]
+        EUR["Netflix Eureka Server"]
+    end
+
+    subgraph SVC["Microservices"]
+        US["User Service\nport 9020"]
+        PS["Posts Service\nport 9010"]
+        CS["Connection Service\nport 9030"]
+        NS["Notification Service\nport 9040"]
+    end
+
+    subgraph KAFKA_BOX["Message Broker  ·  port 9092"]
+        K["Apache Kafka\nsend-connection-request-topic\naccept-connection-request-topic\npost-created-topic\npost-liked-topic"]
+    end
+
+    subgraph DB["Databases"]
+        PG1[("PostgreSQL\nusersDB")]
+        PG2[("PostgreSQL\npostsDB")]
+        PG3[("PostgreSQL\nnotificationDB")]
+        NEO[("Neo4j\nGraph DB")]
+    end
+
+    subgraph OBS["Observability  ·  port 9411"]
+        ZIP["Zipkin\nDistributed Tracing"]
+    end
+
+    Client -->|"HTTP Request"| GW
+
+    GW -->|"/api/v1/users/** — no auth"| US
+    GW -->|"/api/v1/posts/** — JWT required"| PS
+    GW -->|"/api/v1/connections/** — JWT required"| CS
+
+    GW -.->|"lb:// service lookup"| EUR
+    US -.->|register| EUR
+    PS -.->|register| EUR
+    CS -.->|register| EUR
+    NS -.->|register| EUR
+
+    US --- PG1
+    PS --- PG2
+    NS --- PG3
+    CS --- NEO
+
+    CS -->|"produce: connection events"| K
+    PS -->|"produce: post events"| K
+    K -->|"@KafkaListener consume"| NS
+
+    PS -->|"OpenFeign: GET /first-degree"| CS
+    NS -->|"OpenFeign: GET /first-degree"| CS
+
+    GW -.->|"traceId / spanId"| ZIP
+    US -.->|"traceId / spanId"| ZIP
+    PS -.->|"traceId / spanId"| ZIP
+    CS -.->|"traceId / spanId"| ZIP
+    NS -.->|"traceId / spanId"| ZIP
 ```
 
 ---
