@@ -98,7 +98,7 @@ Kafka (port 9092)                ← Event Broker
 ## Tech Stack
 
 | Category | Technology |
-
+|---|---|
 | Language | Java 17 |
 | Framework | Spring Boot |
 | API Gateway | Spring Cloud Gateway (WebFlux) |
@@ -169,7 +169,7 @@ Downstream → UserContextHolder.getCurrentUserId() → 42
 All asynchronous communication between services goes through **Apache Kafka**. This decouples services so that, for example, a notification failure does not affect the connection or post operation.
 
 | Topic | Producer | Consumer | Purpose |
-
+|---|---|---|---|
 | `send-connection-request-topic` | Connection Service | Notification Service | Notify user of incoming request |
 | `accept-connection-request-topic` | Connection Service | Notification Service | Notify sender of accepted request |
 | `post-created-topic` | Posts Service | Notification Service | Notify connections of new post |
@@ -187,7 +187,7 @@ All asynchronous communication between services goes through **Apache Kafka**. T
 Used by User Service, Posts Service, and Notification Service.
 
 | Service | Database | Key Tables |
-
+|---|---|---|
 | User Service | `usersDB` | `users` (id, name, email, password) |
 | Posts Service | `postsDB` | `post` (id, userId, content), `post_like` (id, postId, userId) |
 | Notification Service | `notificationDB` | `notification` (id, userId, message) |
@@ -245,13 +245,13 @@ Custom Cypher queries handle graph traversal for first-degree connections and re
 
 ### User Service — `localhost:9020/users`
 | Method | Endpoint | Auth | Description |
-
+|---|---|---|---|
 | POST | `/auth/signup` | No | Register a new user |
 | POST | `/auth/login` | No | Login and receive JWT |
 
 ### Posts Service — `localhost:9010/posts`
 | Method | Endpoint | Auth | Description |
-
+|---|---|---|---|
 | POST | `/core` | Yes | Create a post |
 | GET | `/core/{postId}` | Yes | Get a post by ID |
 | GET | `/core/users/{userId}/allPosts` | Yes | Get all posts of a user |
@@ -260,7 +260,7 @@ Custom Cypher queries handle graph traversal for first-degree connections and re
 
 ### Connection Service — `localhost:9030/connections`
 | Method | Endpoint | Auth | Description |
-
+|---|---|---|---|
 | GET | `/core/first-degree` | Yes | Get all first-degree connections |
 | POST | `/core/request/{userId}` | Yes | Send a connection request |
 | POST | `/core/accept/{userId}` | Yes | Accept a connection request |
@@ -277,7 +277,7 @@ Custom Cypher queries handle graph traversal for first-degree connections and re
 Ensure the following are running locally:
 
 | Service | Port |
-
+|---|---|
 | PostgreSQL | 5432 |
 | Neo4j | 7687 |
 | Apache Kafka + Zookeeper | 9092 |
