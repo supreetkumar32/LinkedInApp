@@ -63,6 +63,7 @@ flowchart TD
     GW -->|"/api/v1/users/** — no auth"| US
     GW -->|"/api/v1/posts/** — JWT required"| PS
     GW -->|"/api/v1/connections/** — JWT required"| CS
+    GW -->|"/api/v1/notifications/** — JWT required"| NS
 
     GW -.->|"lb:// service lookup"| EUR
     US -.->|register| EUR
@@ -134,13 +135,13 @@ flowchart TD
 - Uses **PostgreSQL** (`postsDB`) with Spring Data JPA / Hibernate.
 
 ### 6. Notification Service
-- A **pure consumer service** — it does not expose any public REST endpoints.
 - Listens to 4 Kafka topics using `@KafkaListener`:
   - `send-connection-request-topic` — notifies receiver of a new request.
   - `accept-connection-request-topic` — notifies sender that their request was accepted.
   - `post-created-topic` — fetches all connections of the post creator via OpenFeign and notifies each one.
   - `post-liked-topic` — notifies the post owner that their post was liked.
 - Persists all notifications to **PostgreSQL** (`notificationDB`).
+- Exposes `GET /core/my` REST endpoint so authenticated users can fetch their notification history, ordered by newest first.
 
 ---
 
@@ -315,8 +316,13 @@ Custom Cypher queries handle graph traversal for first-degree connections and re
 | POST | `/core/accept/{userId}` | Yes | Accept a connection request |
 | POST | `/core/reject/{userId}` | Yes | Reject a connection request |
 
+### Notification Service — `localhost:9040/notifications`
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| GET | `/core/my` | Yes | Get all notifications for the logged-in user |
+
 > All authenticated endpoints must include `Authorization: Bearer <token>` header.
-> Via API Gateway, prefix all paths with `/api/v1` (e.g., `/api/v1/posts/core`).
+> Via API Gateway, prefix all paths with `/api/v1` (e.g., `/api/v1/notifications/core/my`).
 
 ---
 

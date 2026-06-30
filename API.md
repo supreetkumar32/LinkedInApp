@@ -559,6 +559,12 @@ C:\kibana-9.4.2\bin>kibana.bat (kibana)
 C:\logstash-9.4.2>bin\logstash.bat -f C:\logstash-9.4.2\logstash.conf (logstash)
 
 
+notification service is also implemented
+User check the notifications:
+GET http://localhost:8080/api/v1/notifications/core/my (authorization token)
+
+
+
 
 
 
